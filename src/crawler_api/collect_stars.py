@@ -98,7 +98,7 @@ def get_crawling_progress(file_path, separator=','):
         for last_line in csv_file:
             pass 
 
-        last_star = int(last_line[0]) if last_line else 0
+        last_star = int(last_line[0]) + 1 if last_line else 0
     r.close()
 
     return last_star
