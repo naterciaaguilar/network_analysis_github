@@ -116,7 +116,6 @@ def main():
                         required=False)
 
     args = parser.parse_args()
-    print(args) 
     
     # Print start time processing
     start_time = datetime.datetime.now()
@@ -139,11 +138,7 @@ def main():
 
     # Recover the histogram of repositories by stars
     save_stars_histogram(token, args.language, args.date, init_star, max_stars, stars_file_path)
-
-    # Save the stars file
-    stars_path = f'{utils.get_main_path()}data\\crawler\\stars\\{args.language}_stars_histogram.csv'
-    stars_df.to_csv(stars_path, index=False, sep=';')
-    print(f'\nStars file successfully saved on {stars_path}\n')
+    print(f'\nStars file successfully saved on {stars_file_path}\n')
     
     # Print finish time processing
     end_time = datetime.datetime.now()
