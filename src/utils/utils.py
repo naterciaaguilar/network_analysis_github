@@ -13,7 +13,7 @@ def get_token_key(token_key, filename='tokens.csv'):
     # get the path before the src folder and complete to the data path
     tokens_path = os.path.join(get_main_path(), 'data', filename)
     
-    df_tokens = pd.read_csv(tokens_path, header=None, sep=',', names=['token_key', 'token'], engine='python')
+    df_tokens = pd.read_csv(tokens_path, header=None, sep=',', names=['token_key', 'token'])
     
     try:
         return df_tokens[df_tokens['token_key'] == token_key].iloc[0]['token']
